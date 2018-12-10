@@ -1453,29 +1453,66 @@
 #             else :
 #                 return i
 #                 # break
+# class Solution:
+#     def searchInsert(self, nums, target):
+#         """
+#         :type nums: List[int]
+#         :type target: int
+#         :rtype: int
+#         """
+#         l = 0
+#         r = len(nums)
+#         while l < r:
+#             mid = l + int((r - l)/2)
+#             if nums[mid] < target:
+#                 l = mid + 1
+#             elif nums[mid] > target:
+#                 r = mid
+#             else:
+#                 return mid
+#         return r
+# s = Solution()
+# nums =[1,2,3,4,5]
+# target = 0
+# print(s.searchInsert(nums, target))
+# s = '1'
+# print(len(s[0]),s[0])
+# s.insert(2)
+# print(len(s[0]),s[0])
+# # strs[][] = ''
+# strs = ['1','1124']
+# # strs[0] = 1
+# print(strs[1][2])
+# for k in range(1,30):
+#     print (k)
 class Solution:
-    def searchInsert(self, nums, target):
+    def countAndSay(self, n):
         """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
+        :type n: int
+        :rtype: str
         """
-        l = 0
-        r = len(nums)
-        while l < r:
-            mid = l + int((r - l)/2)
-            if nums[mid] < target:
-                l = mid + 1
-            elif nums[mid] > target:
-                r = mid
-            else:
-                return mid
-        return r
+        # dic = {'one': '1', 'two': '2', 'three': '3', 'four': '4', 'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9'}
+        strs = ['1', '11']
+        new_strs = ''
+        # strs[0] = '1'
+        # if str[n-1] == 1:
+        #     return 1
+        i = 0
+        j = 1
+        t = 0
+        k=0
+        # for k in range(1,31):
+        while k < 30:
+            for i in range(0,(len(strs[k])-1)):
+                if strs[k][i] == strs[k][i+1]:
+                    j += 1
+                else:
+                    new_strs[t] = j
+                    new_strs[t+1] = strs[k][i]
+                    t += 2
+                    j = 1
+                    strs.append(new_strs)
+            k += 1
+        return strs[n-1]
 s = Solution()
-nums =[1,2,3,4,5]
-target = 0
-print(s.searchInsert(nums, target))
-
-
-
-娜娜不要急
+print(s.countAndSay(4))
