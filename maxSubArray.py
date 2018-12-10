@@ -148,7 +148,7 @@ class Solution:
             subMax = max(nums[i] + nums[i-1], nums[i])
             nums[i] = subMax
         return max(nums)
-nums = [-1,0,-2,2,3]
+nums = [-1,0,-2,2,3,4,5]
 s = Solution()
 print(s.maxSubArray(nums))
 # print(sum(1,2,3))
