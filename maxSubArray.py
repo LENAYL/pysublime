@@ -133,7 +133,7 @@ class Solution:
         :rtype: int
         """
         onesum = 0
-        maxsum = 0
+        maxsum = nums[0]
         for i in range(len(nums)):
             onesum += nums[i]
             maxsum = max(onesum, maxsum)
