@@ -126,20 +126,28 @@
 #         print(max(max_list))
 #         print(new_list[max_list.index(max(max_list))])
 #         return(max(max_list))
+# mymethod 1
+# class Solution:
+#     def maxSubArray(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         onesum = 0
+#         maxsum = nums[0]
+#         for i in range(len(nums)):
+#             onesum += nums[i]
+#             maxsum = max(onesum, maxsum)
+#             if onesum < 0:
+#                 onesum = 0
+#         return maxsum
+# mymethod 2
 class Solution:
     def maxSubArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        onesum = 0
-        maxsum = nums[0]
-        for i in range(len(nums)):
-            onesum += nums[i]
-            maxsum = max(onesum, maxsum)
-            if onesum < 0:
-                onesum = 0
-        return maxsum
+        for i in range(1,len(nums)):
+            subMax = max(nums[i] + nums[i-1], nums[i])
+            nums[i] = subMax
+        return max(nums)
 nums = [-1,0,-2,2]
 s = Solution()
 print(s.maxSubArray(nums))
