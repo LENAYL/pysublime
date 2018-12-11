@@ -86,7 +86,7 @@ class Solution:
         return myconutandsay(self, '11', 3)
 
 ss = Solution()
-print(ss.countAndSay(5))
+print(ss.countAndSay(8))
 
 
 
