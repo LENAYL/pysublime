@@ -38,3 +38,6 @@ b = ''
 print(a.lengthOfLastWord(b))
 # s = 'ab,cde,fgh,ijk'
 # print(s.split(','))
+c = ''
+print(c.split(' '))
+print(len(c))
