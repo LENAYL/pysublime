@@ -35,5 +35,5 @@ class Solution:
             r = (r + x / r) // 2
         return int(r)
 s = Solution()
-print(s.mySqrt(300))
+print(s.mySqrt(30))
 
