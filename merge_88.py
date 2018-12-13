@@ -37,24 +37,28 @@ class Solution:
                     j += 1
                     count += 1
             else:
-                if j == (m+count):
+                if j >= (m+count):
                     nums1[j:] = nums2[i:]
-                    return nums1[:(m+n)]
+                    nums1[:] = nums1[:(m+n)]
+                    # nums1 = nums1[0:1]
+                    # nums2 =
+                    # return nums1
                 else:
-                    return nums1[:(m + n)]
+                    nums1[:] = nums1[:(m + n)]
+                    # return nums1
         except:
             return False
 
 s = Solution()
-nums1 =  [2,0]
+nums3 =  [2,0]
 m = 1
-nums2 = [1]
+nums4 = [1]
 # nums1[0:]=nums2[1:]
 # print(nums1)
 n = 1
-# print(nums1[:2])
-print(s.merge(nums1, m, nums2, n))
-
+s.merge(nums3, m, nums4, n)
+print(nums3)
+# print(nums5)
 # method 2
 # nums1[m:(m+n)] = nums2[:n]
 # nums1.sort()
