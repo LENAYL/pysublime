@@ -32,8 +32,8 @@ class Solution:
             if not q and not p:
                 return True
             if p.val == q.val and q and p:
-                l = isisSymmetric(q.left, p.right)
                 r = isisSymmetric(q.right, p.left)
+                l = isisSymmetric(q.left, p.right)
                 return l and r
             else:
                 return False
