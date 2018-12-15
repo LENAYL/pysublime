@@ -64,4 +64,6 @@ class Solution(object):
 s = Solution()
 nums = [-10,-3,0, 1,5,9]
 print(s.sortedArrayToBST(nums))
+num = [1, 2, 3]
+print(num + nums)
 
