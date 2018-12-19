@@ -9,35 +9,57 @@ class Solution(object):
         :type head1, head1: ListNode
         :rtype: ListNode
         """
-        if headA and headB:
-            # node_n = []
-            node_A = headA
-            node_B = headB
-            if node_B.next == node_A and node_A.next == node_B:
-                return 'Intersected at ' and node_B.val
-            ta = 1
-            tb = 1
-            while node_A.next:
-                ta += 1
-                node_A = node_A.next
-            while node_B.next:
-                tb += 1
-                node_B = node_B.next
-            if node_B.val == node_A.val:
-                node_A = headA
-                node_B = headB
-                # return 'Intersected at ' and node_B.val
-                while ta > tb:
-                    ta -= 1
-                    node_A = node_A.next
-                while ta < tb:
-                    tb -= 1
-                    node_B = node_B.next
-                while node_A and node_B:
-                    if node_A == node_B:
-                        return 'Intersected at ' and node_B.val
-                    node_A = node_A.next
-                    node_B = node_B.next
+        #  method 1   哈希表  将其中一个链表存入dict   遍历后面的链表  出现相同key 返回value
+        node1 = headA
+        node2 = headB
+        dict = {}
+        while node1:
+            dict[node1] = node1.val
+            node1 = node1.next
+        while node2:
+            if node2 in dict:
+                return 'Intersected at ' and dict[node2]
+            node2 = node2.next
+
+
+
+
+
+
+        #   method 2
+        #   链表尾部是否相等  相等即相交  否则直接无输出 结束
+        #   相交：分为以下几个步骤：
+        #   1、将长链表的长度缩短至和短链表一样   从头开始遍历 直到两者相等 即为相交节点
+
+        # if headA and headB:
+        #     # node_n = []
+        #     node_A = headA
+        #     node_B = headB
+        #     if node_B.next == node_A and node_A.next == node_B:
+        #         return 'Intersected at ' and node_B.val
+        #     ta = 1
+        #     tb = 1
+        #     while node_A.next:
+        #         ta += 1
+        #         node_A = node_A.next
+        #     while node_B.next:
+        #         tb += 1
+        #         node_B = node_B.next
+        #     if node_B.val == node_A.val:
+        #         node_A = headA
+        #         node_B = headB
+        #         # return 'Intersected at ' and node_B.val
+        #         while ta > tb:
+        #             ta -= 1
+        #             node_A = node_A.next
+        #         while ta < tb:
+        #             tb -= 1
+        #             node_B = node_B.next
+        #         while node_A and node_B:
+        #             if node_A == node_B:
+        #                 return 'Intersected at ' and node_B.val
+        #             node_A = node_A.next
+        #             node_B = node_B.next
 
 
 
