@@ -6,10 +6,14 @@ class Solution(object):
         """
         sum = 0
         while n:
-            rem = n%25
-            n = n // 25
-            sum += 6*n + rem//5
+            n = n//5
+            sum += n
         return sum
+        # while n:
+        #     rem = n%25
+        #     n = n // 25
+        #     sum += 6*n + rem//5
+        # return sum
 
 s = Solution()
 n = 135
