@@ -14,12 +14,6 @@ class Solution:
             count += 1
         return res
 
-
-
-
-
-
-
         # method1 慢慢慢
         # res = ''
         # while n:
