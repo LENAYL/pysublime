@@ -1,8 +1,8 @@
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
 class Solution(object):
     def removeElements(self, head, val):
@@ -11,25 +11,43 @@ class Solution(object):
         :type val: int
         :rtype: ListNode
         """
-        node = ListNode(0)
-        node.next = head
-        temp = node
-        while temp and temp.next and temp.next.next:
-            if temp.next.val == val:
-                temp.next = temp.next.next
+        #method 2
+        if head:
+            while head.val == val:
+                head = head.next
+            temp = head
+            while temp and temp.next and temp.next.next:
+                if temp.next.val == val:
+                    temp = temp.next.next
+                else:
+                    temp = temp.next
+            if temp is None or temp.next is None:
+                return head
             else:
-                temp = temp.next
-        if temp is None:
-            return False
-        elif temp.next is None:
-            if temp.val == val:
-                temp = None
+                if temp.next.val == val:
+                    temp.next = None
+            return head
 
-        else:
-
-            if temp.next.val == val:
-                temp.next = None
-        return node.next
+        # method 1
+        # node = ListNode(0)
+        # node.next = head
+        # temp = node
+        # while temp and temp.next and temp.next.next:
+        #     if temp.next.val == val:
+        #         temp.next = temp.next.next
+        #     else:
+        #         temp = temp.next
+        # if temp is None:
+        #     return False
+        # elif temp.next is None:
+        #     if temp.val == val:
+        #         temp = None
+        #
+        # else:
+        #
+        #     if temp.next.val == val:
+        #         temp.next = None
+        # return node.next
 
 
 s  = Solution()
