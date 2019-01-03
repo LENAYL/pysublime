@@ -11,8 +11,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: TreeNode
         """
-        if root is None:
-            return None
+
         if root.left or root.right:
             tem = self.invertTree(root.right)
             root.right = self.invertTree(root.left)
