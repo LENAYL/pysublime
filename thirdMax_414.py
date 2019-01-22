@@ -12,7 +12,7 @@ class Solution:
             else:
                 table[i] = 1
         new_nums = list(sorted(table))
-        return new_nums[-3]
+        return new_nums[-3] if len(new_nums) >= 3 else new_nums[-1]
 
         # if len(new_nums) < 3:
         #     return new_nums[-1] if nums.count(new_nums[0]) > 1 else new_nums[0]
